@@ -1,0 +1,26 @@
+server:
+  port: 8081
+
+spring:
+  freemarker:
+    suffix: .html
+  application:
+    name: boot3-learn-integration
+  datasource:
+    url: jdbc:mysql://114.116.240.82:3306/spring_learn?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowMultiQueries=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: learn
+    password: learn@123456
+
+logstash.destination: 114.116.240.82:5044
+
+# springdoc-openapi项目配置
+springdoc:
+  group-configs:
+    - group: 'integration'
+      packages-to-scan: top.qinchao4j.integration.controller
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
